@@ -20,12 +20,6 @@ def index():
 	shouts = collection.find()
 	return render_template('index.html', shouts=shouts)
 
-# @app.route("/post", methods=['POST']) 
-# def post(): 
-# 	shout = {"name":request.form['name'], "message":request.form['message']} 
-# 	shout_id = collection.insert(shout) 
-# 	return redirect('/')
-
 @app.route("/deleteAll", methods=['GET']) 
 def deleteAll(): 
 	collection.remove()

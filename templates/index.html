@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Shoutout</title>
+</head>
+<body>
+<!--     <form action="/post" method="post">
+        name: <input type="text" name="name"/>
+        message: <input type="text" name="message"/>
+        <input type="submit" value="Submit"/>
+    </form> -->
+    <form action="/deleteAll" method="get">
+        <input type="submit" value="Delete All"/>
+    </form>
+    <form action="/createNew" method="post">
+        Colonia: <input type="text" name="colonia"/>
+        <input type="submit" value="Crear"/>
+    </form>
+    <form action="/changeStatus" method="post">
+        Colonia: <input type="text" name="colonia"/>
+        Status: <input type="number" name="status"/>
+        <input type="submit" value="Cambiar Status"/>
+    </form>
+    <form action="/getStatus" method="get">
+        Colonia: <input type="text" name="colonia"/>
+        <input type="submit" value="Revisar"/>
+    </form>
+    {% for shout in shouts %}
+    Status: {{ shout.neighborhood}}-{{shout.status}} <br>
+    {% endfor %}
+</body>
+</html>
